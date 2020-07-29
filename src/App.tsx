@@ -1,9 +1,11 @@
 import React from 'react';
 
-import Welcome from './pages/Welcome';
+/* pages */
+// import Welcome from './pages/Welcome';
+import Login from './pages/Login';
 
 const App: React.FC = () => {
-  return <Welcome />;
+  return <Login />;
 };
 
 export default App;

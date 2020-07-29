@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {LinearTextGradient} from 'react-native-text-gradient';
 
-import {Fonts} from '../utils/fonts';
+import {Fonts, Colors} from '../utils';
 
 const logo = require('../../assets/images/logo.png');
 
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.MontserratRegular,
   },
   link: {
-    color: '#00baff',
+    color: Colors.Blue,
     marginTop: 'auto',
     fontFamily: Fonts.MontserratRegular,
   },
