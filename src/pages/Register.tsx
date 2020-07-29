@@ -1,32 +1,42 @@
 import React from 'react';
 import {
-  Text,
   View,
-  StyleSheet,
+  Text,
   TextInput,
+  StyleSheet,
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import {Fonts, Colors, SharedStyles} from '../utils';
+import {SharedStyles, Fonts, Colors} from '../utils';
 import PhoneInput from '../components/PhoneInput';
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   return (
     <ScrollView>
       <View style={SharedStyles.container}>
         <Text style={SharedStyles.header}>
           {/* \n */}
-          Sign in with mobile number
+          Sign up with mobile number
         </Text>
         <View style={SharedStyles.formContainer}>
-          <Text style={SharedStyles.formLabel}>YOUR PHONE</Text>
-          <PhoneInput />
-          <Text style={SharedStyles.formLabel}>PASSWORD</Text>
           <View>
+            <Text style={SharedStyles.formLabel}>YOUR PHONE</Text>
+            <PhoneInput />
+          </View>
+          <View>
+            <Text style={SharedStyles.formLabel}>PASSWORD</Text>
             <TextInput
               style={SharedStyles.input}
               secureTextEntry
-              placeholder="*********************"
+              placeholder="******************"
+            />
+          </View>
+          <View style={styles.confPassContainer}>
+            <Text style={SharedStyles.formLabel}>CONFIRM PASSWORD</Text>
+            <TextInput
+              style={SharedStyles.input}
+              secureTextEntry
+              placeholder="******************"
             />
           </View>
         </View>
@@ -36,9 +46,9 @@ const Login: React.FC = () => {
           style={SharedStyles.btn}>
           <Text style={SharedStyles.btnText}>SIGN IN</Text>
         </TouchableOpacity>
-        <View style={styles.newUser}>
-          <Text style={styles.newUserText1}>Don’t have an account? </Text>
-          <Text style={styles.newUserText2}>Sign Up</Text>
+        <View style={styles.oldUser}>
+          <Text style={styles.oldUserText1}>Have an account? </Text>
+          <Text style={styles.oldUserText2}>Sign In</Text>
         </View>
       </View>
     </ScrollView>
@@ -46,18 +56,21 @@ const Login: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-  newUser: {
+  confPassContainer: {
+    marginTop: 40,
+  },
+  oldUser: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
   },
-  newUserText1: {
+  oldUserText1: {
     fontFamily: Fonts.MontserratRegular,
   },
-  newUserText2: {
+  oldUserText2: {
     fontFamily: Fonts.MontserratSemiBold,
     color: Colors.Blue,
   },
 });
 
-export default Login;
+export default Register;
