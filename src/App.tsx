@@ -1,12 +1,9 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+
+import Welcome from './pages/Welcome';
 
 const App: React.FC = () => {
-  return (
-    <View>
-      <Text>hello world</Text>
-    </View>
-  );
+  return <Welcome />;
 };
 
 export default App;
