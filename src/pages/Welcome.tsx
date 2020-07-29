@@ -44,13 +44,15 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   recommendText: {
-    width: 200,
+    width: 220,
     color: '#939393',
     textAlign: 'center',
+    fontFamily: Fonts.MontserratRegular,
   },
   link: {
     color: '#00baff',
     marginTop: 'auto',
+    fontFamily: Fonts.MontserratRegular,
   },
 });
 

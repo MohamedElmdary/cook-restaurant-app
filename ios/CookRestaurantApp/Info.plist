@@ -56,6 +56,13 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>frankfrt.ttf</string>
+		<string>Helvetica Neu Bold.ttf</string>
+		<string>HelveticaNeue Medium.ttf</string>
+		<string>HelveticaNeue.ttf</string>
+		<string>HelveticaNeue Light.ttf</string>
+		<string>Montserrat-ExtraBold.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
 	</array>
 </dict>
 </plist>
