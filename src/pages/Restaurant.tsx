@@ -68,7 +68,16 @@ const Restaurant: React.FC = () => {
             <Text style={{color: 'white'}}>OPEN</Text>
           </View>
         </View>
-        <Tab.Navigator initialRouteName="Menu">
+        <Tab.Navigator
+          initialRouteName="Menu"
+          tabBarOptions={{
+            activeTintColor: Colors.Orange,
+            inactiveTintColor: 'rgba(0, 0, 0, 0.7)',
+            indicatorStyle: {
+              backgroundColor: Colors.Orange,
+              height: 3,
+            },
+          }}>
           <Tab.Screen name="Menu" component={RestaurantMenu} />
           <Tab.Screen name="About" component={RestaurantAbout} />
           <Tab.Screen name="Review" component={RestaurantReview} />
