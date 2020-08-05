@@ -3,6 +3,7 @@ import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';
 import {Fonts} from '../utils';
+import Rate from './Rate';
 
 export interface SearchResultModel {
   id: number | string;
@@ -30,19 +31,7 @@ const SearchResult: React.FC<{result: SearchResultModel}> = ({
           {name}
         </Text>
         <Text style={{marginBottom: 10, opacity: 0.4}}>{place}</Text>
-        <View style={styles.rate}>
-          {Array(5)
-            .fill(0)
-            .map((_, i) => {
-              return (
-                <AntDesignIcon
-                  name="star"
-                  size={16}
-                  color={i - rate + 1 <= 0 ? '#ffa800' : '#d8d8d8'}
-                />
-              );
-            })}
-        </View>
+        <Rate rate={rate} />
       </View>
       <View style={{marginLeft: 'auto'}}>
         <SimpleLineIcon name="arrow-right" size={16} />
@@ -68,10 +57,6 @@ const styles = StyleSheet.create({
     height: 70,
     width: 70,
     borderRadius: 3,
-  },
-  rate: {
-    display: 'flex',
-    flexDirection: 'row',
   },
 });
 
