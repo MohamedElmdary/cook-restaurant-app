@@ -5,6 +5,7 @@ import {Text, View} from 'react-native';
 import {Colors} from '../utils';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';
+import Cart from './Cart';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,10 +17,6 @@ const History: React.FC = () => {
   return <Text>History</Text>;
 };
 
-const Cart: React.FC = () => {
-  return <Text>Cart</Text>;
-};
-
 const Profile: React.FC = () => {
   return <Text>Profile</Text>;
 };
@@ -29,7 +26,8 @@ const BottomTab = () => {
     <Tab.Navigator
       tabBarOptions={{
         activeTintColor: Colors.Orange,
-      }}>
+      }}
+      initialRouteName="Cart">
       <Tab.Screen
         name="Favorites"
         component={Fav}
@@ -65,21 +63,31 @@ const BottomTab = () => {
         component={Search}
         options={{
           title: '',
-          tabBarIcon({size}) {
+          tabBarIcon({focused, size}) {
+            if (focused) {
+              return (
+                <View
+                  style={{
+                    transform: [{translateY: -5}],
+                    borderRadius: 30,
+                    height: 60,
+                    width: 60,
+                    backgroundColor: Colors.Orange,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    elevation: 6,
+                  }}>
+                  <FontistoIcon name="search" size={size} color="white" />
+                </View>
+              );
+            }
             return (
               <View
                 style={{
-                  transform: [{translateY: -5}],
-                  borderRadius: 30,
-                  height: 60,
-                  width: 60,
-                  backgroundColor: Colors.Orange,
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  elevation: 6,
+                  transform: [{translateY: 5}],
                 }}>
-                <FontistoIcon name="search" size={size} color="white" />
+                <FontistoIcon name="search" size={size} color="black" />
               </View>
             );
           },
