@@ -5,11 +5,7 @@ import {
   TextInput,
   StyleSheet,
   Image,
-  Button,
-  ScrollView,
   FlatList,
-  TouchableOpacity,
-  Text,
 } from 'react-native';
 import SearchResult, {SearchResultModel} from '../components/SearchResult';
 
@@ -57,6 +53,7 @@ const Search: React.FC = () => {
           renderItem={({item, index}) => {
             return <SearchResult key={index} result={item} />;
           }}
+          keyExtractor={(item) => item.id.toString()}
         />
       </View>
     </ImageBackground>
