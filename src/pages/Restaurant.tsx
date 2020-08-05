@@ -69,7 +69,7 @@ const Restaurant: React.FC = () => {
           </View>
         </View>
         <Tab.Navigator
-          initialRouteName="Menu"
+          initialRouteName="About"
           tabBarOptions={{
             activeTintColor: Colors.Orange,
             inactiveTintColor: 'rgba(0, 0, 0, 0.7)',
