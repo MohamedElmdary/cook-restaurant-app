@@ -13,6 +13,7 @@ import Restaurant from './pages/Restaurant';
 import BottomTab from './pages/BottomTab';
 import OrderPreview from './pages/OrderPreview';
 import OrderShipping from './pages/OrderShipping';
+import OrderPayment from './pages/OrderPayment';
 
 const Stack = createStackNavigator();
 
@@ -20,7 +21,7 @@ const App: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="OrderShipping"
+        initialRouteName="OrderPayment"
         screenOptions={{
           headerShown: false,
         }}>
@@ -28,6 +29,7 @@ const App: React.FC = () => {
         <Stack.Screen name="BottomTab" component={BottomTab} />
         <Stack.Screen name="OrderPreview" component={OrderPreview} />
         <Stack.Screen name="OrderShipping" component={OrderShipping} />
+        <Stack.Screen name="OrderPayment" component={OrderPayment} />
       </Stack.Navigator>
     </NavigationContainer>
   );
