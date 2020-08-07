@@ -4,7 +4,7 @@ import Rate from './Rate';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import {Colors} from '../utils';
 
-const FavoriteItem: React.FC = () => {
+const FavoriteItem: React.FC<{txt: number}> = ({txt}) => {
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
@@ -14,7 +14,7 @@ const FavoriteItem: React.FC = () => {
         />
         <View style={styles.details}>
           <View>
-            <Text>Wabi Sabi restaurant</Text>
+            <Text>Wabi Sabi restaurant - {txt}</Text>
             <Text
               style={{
                 color: '#999',

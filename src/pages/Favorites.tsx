@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Colors, Fonts} from '../utils';
 import FavoriteItem from '../components/FavoriteItem';
-import {ScrollView} from 'react-native-gesture-handler';
+import {SwipeListView} from 'react-native-swipe-list-view';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
 const Favorites: React.FC = () => {
+  // prettier-ignore
+  const [data, setData] = useState<number[]>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
   return (
     <View style={{display: 'flex', height: '100%'}}>
       <View style={styles.header}>
@@ -16,13 +21,36 @@ const Favorites: React.FC = () => {
           My Favorites
         </Text>
       </View>
-      <ScrollView>
-        <View style={styles.container}>
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
-            <FavoriteItem key={i} />
-          ))}
-        </View>
-      </ScrollView>
+      <View style={styles.container}>
+        <SwipeListView
+          data={data}
+          renderItem={(data) => (
+            <FavoriteItem key={data.item} txt={data.item} />
+          )}
+          keyExtractor={(data) => data.toString()}
+          leftOpenValue={100}
+          renderHiddenItem={({item}) => (
+            <TouchableOpacity
+              onPress={() => {
+                const copyOfData = [...data];
+                const idx = copyOfData.findIndex((x) => x === item);
+                copyOfData.splice(idx, 1);
+                setData(copyOfData);
+              }}
+              style={{
+                backgroundColor: '#fb3d3c',
+                height: 90,
+                width: 90,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <AntDesignIcon name="delete" color="white" size={25} />
+              <Text style={{color: 'white'}}>Delete</Text>
+            </TouchableOpacity>
+          )}
+        />
+      </View>
     </View>
   );
 };
