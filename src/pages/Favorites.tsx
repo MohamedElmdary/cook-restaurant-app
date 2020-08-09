@@ -28,26 +28,34 @@ const Favorites: React.FC = () => {
             <FavoriteItem key={data.item} txt={data.item} />
           )}
           keyExtractor={(data) => data.toString()}
-          leftOpenValue={100}
+          // leftOpenValue={100}
+          rightOpenValue={-100}
           renderHiddenItem={({item}) => (
-            <TouchableOpacity
-              onPress={() => {
-                const copyOfData = [...data];
-                const idx = copyOfData.findIndex((x) => x === item);
-                copyOfData.splice(idx, 1);
-                setData(copyOfData);
-              }}
+            <View
               style={{
-                backgroundColor: '#fb3d3c',
-                height: 90,
-                width: 90,
                 display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
               }}>
-              <AntDesignIcon name="delete" color="white" size={25} />
-              <Text style={{color: 'white'}}>Delete</Text>
-            </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  const copyOfData = [...data];
+                  const idx = copyOfData.findIndex((x) => x === item);
+                  copyOfData.splice(idx, 1);
+                  setData(copyOfData);
+                }}
+                style={{
+                  backgroundColor: '#fb3d3c',
+                  height: 90,
+                  width: 90,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <AntDesignIcon name="delete" color="white" size={25} />
+                <Text style={{color: 'white'}}>Delete</Text>
+              </TouchableOpacity>
+            </View>
           )}
         />
       </View>
