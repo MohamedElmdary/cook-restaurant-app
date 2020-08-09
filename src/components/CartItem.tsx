@@ -14,7 +14,7 @@ const CartItem: React.FC = () => {
           style={styles.image}
           source={{uri: 'http://placehold.it/100x100'}}
         />
-        <View style={{paddingVertical: 10}}>
+        <View>
           <Text style={{fontSize: 15, fontFamily: Fonts.MontserratSemiBold}}>
             Curied Samisas
           </Text>
@@ -41,13 +41,13 @@ const CartItem: React.FC = () => {
         <TouchableWithoutFeedback
           style={styles.buyOp}
           onPress={() => setAmount(amount > 1 ? amount - 1 : 1)}>
-          <FeatherIcon name="minus-circle" size={25} />
+          <FeatherIcon name="minus-circle" size={20} />
         </TouchableWithoutFeedback>
         <Text style={{marginHorizontal: 10}}>{amount}</Text>
         <TouchableWithoutFeedback
           style={styles.buyOp}
           onPress={() => setAmount(amount + 1)}>
-          <FeatherIcon name="plus-circle" size={25} />
+          <FeatherIcon name="plus-circle" size={20} />
         </TouchableWithoutFeedback>
       </View>
     </View>
@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   image: {
-    width: 80,
-    height: 80,
+    width: 60,
+    height: 60,
     marginRight: 15,
   },
   buyContainer: {
