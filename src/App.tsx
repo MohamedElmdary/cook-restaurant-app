@@ -18,6 +18,7 @@ import OrderComplete from './pages/OrderComplete';
 import Favorites from './pages/Favorites';
 import History from './pages/History';
 import OrderDetails from './pages/OrderDetails';
+import Profile from './pages/Profile';
 
 const Stack = createStackNavigator();
 
@@ -25,7 +26,7 @@ const App: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="OrderDetails"
+        initialRouteName="Profile"
         screenOptions={{
           headerShown: false,
         }}>
@@ -38,6 +39,7 @@ const App: React.FC = () => {
         <Stack.Screen name="Favorites" component={Favorites} />
         <Stack.Screen name="History" component={History} />
         <Stack.Screen name="OrderDetails" component={OrderDetails} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
