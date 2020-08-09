@@ -16,6 +16,17 @@ export const SharedStyles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 100,
   },
+  subHeader: {
+    backgroundColor: 'white',
+    paddingVertical: 15,
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  subHeaderText: {
+    fontFamily: Fonts.MontserratSemiBold,
+    fontSize: 16,
+  },
   input: {
     borderBottomColor: '#ccc',
     borderBottomWidth: 1,

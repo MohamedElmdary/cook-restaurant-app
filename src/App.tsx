@@ -16,6 +16,7 @@ import OrderShipping from './pages/OrderShipping';
 import OrderPayment from './pages/OrderPayment';
 import OrderComplete from './pages/OrderComplete';
 import Favorites from './pages/Favorites';
+import History from './pages/History';
 
 const Stack = createStackNavigator();
 
@@ -23,7 +24,7 @@ const App: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Favorites"
+        initialRouteName="History"
         screenOptions={{
           headerShown: false,
         }}>
@@ -34,6 +35,7 @@ const App: React.FC = () => {
         <Stack.Screen name="OrderPayment" component={OrderPayment} />
         <Stack.Screen name="OrderComplete" component={OrderComplete} />
         <Stack.Screen name="Favorites" component={Favorites} />
+        <Stack.Screen name="History" component={History} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -8,19 +8,13 @@ import {
 } from 'react-native';
 import {FlatList, ScrollView} from 'react-native-gesture-handler';
 import CartItem from '../components/CartItem';
-import {Fonts, Colors} from '../utils';
+import {Fonts, Colors, SharedStyles} from '../utils';
 
 const Cart: React.FC = () => {
   return (
     <View>
-      <View style={styles.header}>
-        <Text
-          style={{
-            fontFamily: Fonts.MontserratSemiBold,
-            fontSize: 16,
-          }}>
-          My Cart
-        </Text>
+      <View style={SharedStyles.subHeader}>
+        <Text style={SharedStyles.subHeaderText}>My Cart</Text>
       </View>
       <View style={{paddingHorizontal: 15}}>
         <FlatList
@@ -47,13 +41,6 @@ const Cart: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: 'white',
-    paddingVertical: 15,
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: 15,
-  },
   btn: {
     width: '100%',
     backgroundColor: Colors.Orange,
